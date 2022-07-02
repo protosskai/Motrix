@@ -1,64 +1,83 @@
-import Vue from 'vue'
-import Router from 'vue-router'
+import Vue from "vue";
+import Router from "vue-router";
 
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
   routes: [
     {
-      path: '/',
-      name: 'main',
-      component: require('@/components/Main').default,
+      path: "/",
+      name: "main",
+      component: require("@/components/Main").default,
       children: [
         {
-          path: '/task',
-          alias: '/',
-          component: require('@/components/Task/Index').default,
+          path: "/task",
+          alias: "/",
+          component: require("@/components/Task/Index").default,
           props: {
-            status: 'active'
+            status: "active"
           }
         },
         {
-          path: '/task/:status',
-          name: 'task',
-          component: require('@/components/Task/Index').default,
+          path: "/task/:status",
+          name: "task",
+          component: require("@/components/Task/Index").default,
           props: true
         },
         {
-          path: '/preference',
-          name: 'preference',
-          component: require('@/components/Preference/Index').default,
+          path: "/preference",
+          name: "preference",
+          component: require("@/components/Preference/Index").default,
           props: true,
           children: [
             {
-              path: 'basic',
-              alias: '',
+              path: "basic",
+              alias: "",
               components: {
-                subnav: require('@/components/Subnav/PreferenceSubnav').default,
-                form: require('@/components/Preference/Basic').default
+                subnav: require("@/components/Subnav/PreferenceSubnav").default,
+                form: require("@/components/Preference/Basic").default
               },
               props: {
-                subnav: { current: 'basic' }
+                subnav: { current: "basic" }
               }
             },
             {
-              path: 'advanced',
+              path: "advanced",
               components: {
-                subnav: require('@/components/Subnav/PreferenceSubnav').default,
-                form: require('@/components/Preference/Advanced').default
+                subnav: require("@/components/Subnav/PreferenceSubnav").default,
+                form: require("@/components/Preference/Advanced").default
               },
               props: {
-                subnav: { current: 'advanced' }
+                subnav: { current: "advanced" }
               }
             },
             {
-              path: 'lab',
+              path: "lab",
               components: {
-                subnav: require('@/components/Subnav/PreferenceSubnav').default,
-                form: require('@/components/Preference/Lab').default
+                subnav: require("@/components/Subnav/PreferenceSubnav").default,
+                form: require("@/components/Preference/Lab").default
               },
               props: {
-                subnav: { current: 'lab' }
+                subnav: { current: "lab" }
+              }
+            }
+          ]
+        },
+        {
+          path: "/mikan",
+          name: "mikan",
+          component: require("@/components/Mikan/Index").default,
+          props: true,
+          children: [
+            {
+              path: "basic",
+              alias: "",
+              components: {
+                subnav: require("@/components/Subnav/MikanSubnav").default,
+                form: require("@/components/Mikan/BangumiSearch").default
+              },
+              props: {
+                subnav: { current: "basic" }
               }
             }
           ]
@@ -66,8 +85,8 @@ export default new Router({
       ]
     },
     {
-      path: '*',
-      redirect: '/'
+      path: "*",
+      redirect: "/"
     }
   ]
-})
+});

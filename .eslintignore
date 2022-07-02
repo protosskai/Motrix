@@ -1,3 +1,4 @@
+src/*
 src/renderer/components/Icons/*.js
 
 src/shared/locales/*

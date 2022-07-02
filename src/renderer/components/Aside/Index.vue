@@ -11,6 +11,9 @@
         </li>
       </ul>
       <ul class="menu bottom-menu">
+        <li @click="nav('/mikan')" class="non-draggable">
+          <mo-icon name="menu-task" width="20" height="20" />
+        </li>
         <li @click="nav('/preference')" class="non-draggable">
           <mo-icon name="menu-preference" width="20" height="20" />
         </li>

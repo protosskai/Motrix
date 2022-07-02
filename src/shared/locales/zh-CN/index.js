@@ -1,12 +1,13 @@
-import about from './about'
-import app from './app'
-import edit from './edit'
-import help from './help'
-import menu from './menu'
-import preferences from './preferences'
-import subnav from './subnav'
-import task from './task'
-import window from './window'
+import about from "./about";
+import app from "./app";
+import edit from "./edit";
+import help from "./help";
+import menu from "./menu";
+import preferences from "./preferences";
+import subnav from "./subnav";
+import task from "./task";
+import window from "./window";
+import mikan from "./mikan";
 
 export default {
   about,
@@ -17,5 +18,6 @@ export default {
   preferences,
   subnav,
   task,
-  window
-}
+  window,
+  mikan
+};
